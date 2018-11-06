@@ -1,3 +1,49 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    font-size: 48px;
+    color: black;
+    text-align: center;
+}
+
+html {
+    background: #111111;
+}
+
+body {
+    background: white;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    margin: 5;
+}
+
+input[type=text] {
+    width: 90%;
+    padding: 12px 12px;
+    border: 2px solid #ccc;
+    background-color: #f8f8f8;
+}
+
+textarea {
+    width: 90%;
+    height: 300px;
+    padding: 12px 12px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+input[type=button], input[type=submit] {
+    background-color: red;
+    float: right;
+    border: 10px;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}

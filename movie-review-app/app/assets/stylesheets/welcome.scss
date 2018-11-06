@@ -2,31 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-    background: #E90101;
-}
-
-input[type=text] {
-    width: 50%;
-    padding: 12px 12px;
-    border: 2px solid #ccc;
-    background-color: #f8f8f8;
-}
-
-textarea {
-    width: 100%;
-    height: 300px;
-    padding: 12px 12px;
-    border: 2px solid #ccc;
-    background-color: #f8f8f8;
-}
-
-input[type=button], input[type=submit] {
-    background-color: #010001;
-    float: right;
-    border: none;
-    color: white;
-    padding: 16px 20px;
-    text-decoration: none;
-    cursor: pointer;
-}
