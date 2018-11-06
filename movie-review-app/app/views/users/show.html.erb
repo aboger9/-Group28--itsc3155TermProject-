@@ -1,22 +1,22 @@
 <div class="menu">
             <a href="/welcome/index">Home</a>
-            <a href=/users>Users</a>
+            <a href=/users>Movies</a>
             <a href=/users/1>Reviews</a>
         </div>
 
 <p>
-  <strong>Username:</strong>
+  <strong>Movie Title:</strong>
   <%= @user.name %>
 </p>
  
 <p>
-  <strong>Password:</strong>
+  <strong>Release Year:</strong>
   <%= @user.password %>
 </p>
 <h2>Reviews</h2>
 <% @user.reviews.each do |review| %>
   <p>
-    <strong>Title:</strong>
+    <strong>Review Author:</strong>
     <%= review.title %>
   </p>
  
@@ -40,4 +40,4 @@
     <%= f.submit %>
   </p>
 <% end %>
-<%= link_to 'User List', users_path %>
+<%= link_to 'Movie List', users_path %>

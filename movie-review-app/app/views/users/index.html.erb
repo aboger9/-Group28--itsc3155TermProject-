@@ -1,16 +1,16 @@
  <div class="menu">
             <a href="/welcome/index">Home</a>
-            <a href=/users>Users</a>
+            <a href=/users>Movies</a>
             <a href=/users/1>Reviews</a>
         </div>
         
-<h1>Listing users</h1>
+<h1>Listing movies</h1>
  
- <%= link_to 'New user', new_user_path %>
+ <%= link_to 'New movie', new_user_path %>
 <table>
   <tr>
-    <th>Username</th>
-    <th>Password</th>
+    <th>Movie Name</th>
+    <th>Release Year</th>
   </tr>
  
   <% @users.each do |user| %>
