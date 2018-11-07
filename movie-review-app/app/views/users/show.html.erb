@@ -1,23 +1,25 @@
 <div class="menu">
             <a href="/welcome/index">Home</a>
             <a href=/users>Users</a>
-            <a href=/users/1>Reviews</a>
+            <a href=/users/6>Reviews</a>
         </div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.name %>
-</p>
+
  
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-<h2>Reviews</h2>
 <% @user.reviews.each do |review| %>
-  <p>
+  <h1>
     <strong>Title:</strong>
     <%= review.title %>
+  </h1>
+ 
+ <p>
+    <strong>Rating:</strong>
+    <%= review.rating %> /10
+  </p>
+ 
+  <p>
+    <strong>Release Date:</strong>
+    <%= review.date %>
   </p>
  
   <p>
@@ -25,6 +27,11 @@
     <%= review.body %>
   </p>
 <% end %>
+
+<p>
+  <strong>Author:</strong>
+  <%= @user.name %>
+</p>
 
 <h2>Add a review:</h2>
 <%= form_for([@user, @user.reviews.build]) do |f| %>
@@ -35,6 +42,16 @@
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :body %>
+  </p>
+  
+  <p>
+    <%= f.label :rating %><br>
+    <%= f.text_area :rating %>
+  </p>
+  
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_area :date %>
   </p>
   <p>
     <%= f.submit %>

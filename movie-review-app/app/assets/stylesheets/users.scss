@@ -7,16 +7,23 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    margin: 25px;
+}
+
 html {
     background: #111111;
 }
 
 body {
     background: white;
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Lato", sans-serif;
+    padding-bottom: 5px;
+}
+
+p {
     margin: 25px;
-    padding-bottom: 50px;
 }
 
 input[type=text] {
