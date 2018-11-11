@@ -5,8 +5,14 @@ class ReviewsController < ApplicationController
         redirect_to user_path(@user)
     end
     
-    def edit
+    #def edit
+        #@review = Review.find(params[:id])
+    #end
+    
+    def destroy
         @review = Review.find(params[:id])
+        @review.destroy
+        redirect_to user_path(@user)
     end
     
     private
