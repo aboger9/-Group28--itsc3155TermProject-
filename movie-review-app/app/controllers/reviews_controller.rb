@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
         redirect_to user_path(@user)
     end
     
+    def edit
+        @review = Review.find(params[:id])
+    end
+    
     private
         def review_params
            params.require(:review).permit(:title, :body) 
