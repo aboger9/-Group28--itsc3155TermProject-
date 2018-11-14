@@ -1,0 +1,33 @@
+<div class="menu">
+            <a href="/welcome/index">Home</a>
+            <a href=/users>Users</a>
+            <a href=/movies>Movies</a>
+            <a href=/users/1>Reviews</a>
+        </div>
+
+  <h1>
+    <strong>Title:</strong>
+    <%= @movie.title %>
+  </h1>
+ 
+ <p>
+    <strong>Director:</strong>
+    <%= @movie.director %> 
+  </p>
+ 
+ <p>
+    <strong>Synopsis:</strong>
+    <%= @movie.synopsis %> 
+  </p>
+ 
+  <p>
+    <strong>Release date:</strong>
+    <%= @movie.releaseDate %>
+  </p>
+ 
+  <p>
+    <strong>MA Rating:</strong>
+    <%= @movie.maRating %>
+  </p>
+
+<%= link_to 'Movie List', movies_path %>

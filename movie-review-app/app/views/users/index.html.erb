@@ -1,7 +1,8 @@
- <div class="menu">
+<div class="menu">
             <a href="/welcome/index">Home</a>
             <a href=/users>Users</a>
-            <a href=/users/6>Reviews</a>
+            <a href=/movies>Movies</a>
+            <a href=/users/1>Reviews</a>
         </div>
         
 <h1>Listing users</h1>
@@ -15,7 +16,7 @@
  
   <% @users.each do |user| %>
     <tr>
-      <td><%= user.name %></td>
+      <td><%= user.username %></td>
       <td><%= user.password %></td>
       <td><%= link_to 'Show', user_path(user) %></td>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
