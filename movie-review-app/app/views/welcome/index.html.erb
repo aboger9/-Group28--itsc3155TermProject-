@@ -4,14 +4,24 @@
     </head>
     <body>
         <div class="menu">
-            <a href="/welcome/index">Home</a>
-            <a href=/users>Users</a>
-            <a href=/movies>Movies</a>
+            <%= image_tag("logo.png", class: "logo")%>
             <a href=/users/1>Reviews</a>
+            <a href=/movies>Movies</a>
+            <a href=/users>Users</a>
+            <a href="/welcome/index">Home</a>
         </div>
         
-<h1>Homepage</h1>
-        
-<p>This is the welcome index of our web-app</p>
+<h1>Welcome</h1>
+        <div class="row">
+          <div class="column">
+            <%= image_tag("Posters_Fright_Night", class: "styles_image")%>
+        </div>
+          <div class="column">
+            <%= image_tag("Posters_Stranger_Things", class: "styles_image")%>
+        </div>
+          <div class="column">
+            <%= image_tag("Posters_Jaws", class: "styles_image")%>
+          </div>
+        </div>
     </body>
 </html>

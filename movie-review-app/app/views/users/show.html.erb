@@ -1,8 +1,9 @@
 <div class="menu">
-            <a href="/welcome/index">Home</a>
-            <a href=/users>Users</a>
-            <a href=/movies>Movies</a>
+            <%= image_tag("logo.png", class: "logo")%>
             <a href=/users/1>Reviews</a>
+            <a href=/movies>Movies</a>
+            <a href=/users>Users</a>
+            <a href="/welcome/index">Home</a>
         </div>
 
 
@@ -19,7 +20,7 @@
   </p>
  
   <p>
-    <strong>Release Date:</strong>
+    <strong>Review Date:</strong>
     <%= review.date %>
   </p>
  
@@ -27,12 +28,13 @@
     <strong>Review:</strong>
     <%= review.body %>
   </p>
-<% end %>
 
 <p>
   <strong>Author:</strong>
   <%= @user.username %>
 </p>
+
+<% end %>
 
 <h2>Add a review:</h2>
 <%= form_for([@user, @user.reviews.build]) do |f| %>
@@ -58,4 +60,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-<%= link_to 'User List', users_path %>

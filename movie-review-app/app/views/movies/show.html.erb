@@ -1,8 +1,9 @@
 <div class="menu">
-            <a href="/welcome/index">Home</a>
-            <a href=/users>Users</a>
-            <a href=/movies>Movies</a>
+            <%= image_tag("logo.png", class: "logo")%>
             <a href=/users/1>Reviews</a>
+            <a href=/movies>Movies</a>
+            <a href=/users>Users</a>
+            <a href="/welcome/index">Home</a>
         </div>
 
   <h1>
@@ -29,5 +30,32 @@
     <strong>MA Rating:</strong>
     <%= @movie.maRating %>
   </p>
+  
+  <br>
+  <h2>Reviews:</h2>
+  
+  <% @movie.reviews.each do |review| %>
+<p>
+  <strong>Author:</strong>
+  <%= User.find_by_id(review.user_id).username%>
+</p>
+ 
+ <p>
+    <strong>Rating:</strong>
+    <%= review.rating %> /10
+  </p>
+ 
+  <p>
+    <strong>Review date:</strong>
+    <%= review.date %>
+  </p>
+ 
+  <p>
+    <strong>Review:</strong>
+    <%= review.body %>
+  </p>
 
-<%= link_to 'Movie List', movies_path %>
+  <br>
+  <br>
+  
+<% end %>

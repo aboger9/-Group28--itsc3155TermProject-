@@ -60,18 +60,44 @@ th, td {
     width: 100%;
     height: 63px;
     background-color: red;
+    font-weight: bold;
 }
 
 .menu a {
-    float: left;
+    float: right;
     display: block;
     color: white;
     text-align: center;
     text-decoration: none;
-    padding: 20px 18px;
+    padding: 22px 20px;
 }
 
 .menu a:hover {
     background-color: #ddd;
     color: black;
+}
+
+.logo {
+    float: left; 
+    border: 1px; 
+    max-height: 62px; 
+    max-width: 767px;
+}
+
+.styles_image {
+    display: block;
+    margin: 0 auto;
+    max-height: 500px; 
+    max-width: 500px;
+    padding-bottom: 30px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+  width: 100%;
 }
