@@ -11,22 +11,18 @@ class ReviewsController < ApplicationController
     
     def create
         @review = Review.new(review_params)
-        #byebug
-        #Movie.each do |movie|
-            #if(movie.title == @review.title)
-                #@review.movie_id = movie.id
-            #end
-        #end
+        
         if @review.save
-            #byebug
             redirect_to '/users'
         else
-            redirect_to '/users'
+            @user = User.find(params[:user_id])
+            redirect_to user_path(@user)
         end
     end
     
-    private
-        def review_params
-           params.require(:review).permit(:title, :body, :rating, :date) 
-        end
+    
+private
+    def review_params
+        params.require(:review).permit(:title, :body, :rating, :date) 
+    end
 end
