@@ -6,13 +6,13 @@
             <a href="/welcome/index">Home</a>
         </div>
 
-
+<h1>Reviews posted</h1>
  
 <% @user.reviews.each do |review| %>
-  <h1>
-    <strong>Title:</strong>
-    <%= review.title %>
-  </h1>
+  <h2>
+    Review for:
+    <%= review.title%>
+  </h2>
  
  <p>
     <strong>Rating:</strong>
@@ -29,35 +29,4 @@
     <%= review.body %>
   </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @user.username %>
-</p>
-
-<% end %>
-
-<h2>Add a review:</h2>
-<%= form_for([@user, @user.reviews.build]) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :body %>
-  </p>
-  
-  <p>
-    <%= f.label :rating %><br>
-    <%= f.text_area :rating %>
-  </p>
-  
-  <p>
-    <%= f.label :date %><br>
-    <%= f.text_area :date %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
 <% end %>

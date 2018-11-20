@@ -7,6 +7,34 @@
     padding-bottom: 30px;
 }
 
+.menu {
+    width: 100%;
+    height: 63px;
+    background-color: red;
+    font-weight: bold;
+}
+
+.menu a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 22px 20px;
+}
+
+.menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.logo {
+    float: left; 
+    border: 1px; 
+    max-height: 62px; 
+    max-width: 767px;
+}
+
 .row {
   display: flex;
   justify-content: center
@@ -17,4 +45,34 @@
   padding: 5px;
   max-height: 100%;
   max-width: 100%;
+}
+
+h1 {
+    font-size: 48px;
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    margin: 25px;
+}
+
+html {
+    background: #111111;
+}
+
+body {
+    background: white;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    padding-bottom: 5px;
+}
+
+p {
+    margin: 25px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
 }
