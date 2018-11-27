@@ -1,10 +1,5 @@
 class ReviewsController < ApplicationController
-    #def create
-        #@user = User.find(params[:user_id])
-       # @review = @user.reviews.create(review_params)
-       # redirect_to user_path(@user)
-   # end
-   
+
     def new
        @review = Review.new 
     end
@@ -12,7 +7,8 @@ class ReviewsController < ApplicationController
     def create
         @movie = Movie.find(params[:movie_id])
         @review = Review.new(review_params)
-        
+        @review.user_id = 1
+        @review.movie_id = @movie.id
         @review.save
         redirect_to movie_path(@movie)
     end
