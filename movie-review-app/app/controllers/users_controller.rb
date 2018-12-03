@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         #byebug
         if @user.save
-            #byebug
+            log_in @user
             redirect_to @user
         else
             render 'new'
@@ -41,12 +41,8 @@ class UsersController < ApplicationController
        @user = User.find(params[:id]) 
     end
     
-    def get_user
-        @user.id
-    end
-    
     private
     def user_params
-        params.require(:user).permit(:username, :password)
+        params.require(:user).permit(:email, :username, :password)
     end
 end

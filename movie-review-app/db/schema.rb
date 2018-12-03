@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_004913) do
+ActiveRecord::Schema.define(version: 2018_11_28_063611) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 2018_11_20_004913) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
