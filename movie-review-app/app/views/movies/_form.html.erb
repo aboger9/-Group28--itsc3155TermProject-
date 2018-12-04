@@ -1,19 +1,22 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+    <%= form_for(@movie) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.label :synopsis %>
+      <%= f.text_field :synopsis %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :director %>
+      <%= f.text_field :director %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label "MA rating" %>
+      <%= f.text_field :maRating %>
+      
+      <%= f.label "Release date" %>
+      <%= f.text_field :releaseDate %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Add movie", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
