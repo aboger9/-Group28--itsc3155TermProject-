@@ -10,9 +10,8 @@ class SessionsController < ApplicationController
       log_in @user
       print "SESSION ID: "
       puts session[:user_id]
-      redirect_to '/users'
+      redirect_to '/movies'
     else
-      flash.now[:danger] = 'Invalid email or password'
       render 'new'
     end
   end

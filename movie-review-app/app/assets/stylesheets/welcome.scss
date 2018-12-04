@@ -50,6 +50,8 @@ p {
 
 body {
   padding-top: 60px;
+  width: 974px; 
+  margin: 0 auto;
 }
 
 section {
@@ -143,4 +145,21 @@ aside {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  text-align: center;
+  flex: 33.33%;
+  padding: 5px;
+}
+
+.styles_image {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 5px;
+    width: 350px;
 }

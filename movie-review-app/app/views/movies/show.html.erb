@@ -4,26 +4,38 @@
     <strong>Title:</strong>
     <%= @movie.title %>
   </h1>
+  
+    <h1>
+    <%= image_tag("https://images-na.ssl-images-amazon.com/images/I/71eWXnUxG3L._SL1500_.jpg", class: "styles_image") %>
+  </h1>
  
- <p>
+ <h4>
     <strong>Director:</strong>
     <%= @movie.director %> 
-  </p>
+  </h4>
  
- <p>
+ <h4>
     <strong>Synopsis:</strong>
     <%= @movie.synopsis %> 
-  </p>
+  </h4>
  
-  <p>
+  <h4>
     <strong>Release date:</strong>
     <%= @movie.releaseDate %>
-  </p>
+  </h4>
  
-  <p>
+  <h4>
     <strong>MA Rating:</strong>
     <%= @movie.maRating %>
-  </p>
+  </h4>
+  
+  <h4>
+    <%= link_to 'Edit', edit_movie_path(@movie) %></td>
+    <%= link_to 'Destroy',
+                  movie_path(@movie),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+  </h4>
   
   <br>
   <h2>Reviews:</h2>
@@ -36,7 +48,7 @@
  
  <p>
     <strong>Rating:</strong>
-    <%= review.rating %> /10
+    <%= review.rating %> /10.0
   </p>
  
   <p>
@@ -56,10 +68,7 @@
 
 <h2>Add a review:</h2>
 <%= form_for([@movie, @movie.reviews.build]) do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :body %>

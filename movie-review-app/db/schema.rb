@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_020329) do
+ActiveRecord::Schema.define(version: 2018_12_04_132352) do
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_020329) do
     t.string "releaseDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image", default: "https://images-na.ssl-images-amazon.com/images/I/71eWXnUxG3L._SL1500_.jpg"
   end
 
   create_table "reviews", force: :cascade do |t|

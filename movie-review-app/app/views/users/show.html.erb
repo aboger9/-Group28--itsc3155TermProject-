@@ -1,12 +1,31 @@
 <%= render 'menu' %>
 
-<h1>Reviews posted</h1>
+<h4> <strong>Email: </strong> 
+<%= @user.email %> 
+</h4>
+
+<h4> <strong>Username: </strong>
+<%= @user.username %>
+</h4>
+
+<h4> <strong>Encrypted password: </strong>
+<%= @user.password_digest %>
+</h4>
+
+<h4><%= link_to 'Edit', edit_user_path(@user) %> 
+<%= link_to 'Destroy',
+            user_path(@user),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+</h4>
+
+<h2>Reviews posted</h2>
  
 <% @user.reviews.each do |review| %>
-  <h2>
+  <h3>
     Review for:
     <%= review.title%>
-  </h2>
+  </h3>
  
  <p>
     <strong>Rating:</strong>

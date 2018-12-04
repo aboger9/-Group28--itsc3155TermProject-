@@ -6,7 +6,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Movies", '/movies' %></li>
-        <li><%= link_to "Users", '/users' %></li>
         <% if logged_in? %>
               <li><%= link_to "Profile", current_user %></li>
               <li class="divider"></li>
@@ -24,16 +23,12 @@
 </header>
 
 <h1>Welcome</h1>
-        <div class="row">
-          <div class="column">
-            <%= image_tag("Posters_Fright_Night", class: "styles_image")%>
-        </div>
-          <div class="column">
-            <%= image_tag("Posters_Stranger_Things", class: "styles_image")%>
-        </div>
-          <div class="column">
-            <%= image_tag("Posters_Jaws", class: "styles_image")%>
-          </div>
-        </div>
+        <p>
+          This is our group project for ITSC 3155. The web-application we engineered is a movie review website for horror films specifically.
+          We created three models: a user, a movie, and a review, as well as implemented the sessions model. 
+          This app has signup/login functionality, storing signup information and encrypting your password.
+          Lastly, this group put much time and effort into this, and we are happy with our final product. 
+          Enjoy!
+        </p>
     </body>
 </html>

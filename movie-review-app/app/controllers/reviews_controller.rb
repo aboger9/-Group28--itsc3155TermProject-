@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
             @review.user_id = session[:user_id]
         end
         @review.movie_id = @movie.id
+        @review.title = @movie.title
         
         @review.save
         redirect_to movie_path(@movie)
@@ -19,6 +20,6 @@ class ReviewsController < ApplicationController
     
 private
     def review_params
-        params.require(:review).permit(:title, :body, :rating, :date) 
+        params.require(:review).permit(:body, :rating, :date) 
     end
 end

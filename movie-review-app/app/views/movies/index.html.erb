@@ -2,27 +2,18 @@
         
 <h1>Listing movies</h1>
  
- <%= link_to 'New Movie', new_movie_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Director</th>
-    <th>Rating</th>
-    <th>Release Date</th>
-  </tr>
- 
   <% @movies.each do |movie| %>
-    <tr>
-      <td><%= movie.title %></td>
-      <td><%= movie.director %></td>
-      <td><%= movie.maRating %></td>
-      <td><%= movie.releaseDate %></td>
-      <td><%= link_to 'Show', movie_path(movie) %></td>
-      <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-      <td><%= link_to 'Destroy',
-                                movie_path(movie),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+   
+   <div class="row">
+     <div class="column">
+            <h1><%= movie.title %></h1>
+            <%= image_tag("https://images-na.ssl-images-amazon.com/images/I/71eWXnUxG3L._SL1500_.jpg", class: "styles_image")%>
+        </div>
+        <div class="column">
+            <h3><%= movie.synopsis%></h3>
+            <p><%= link_to "read more", movie_path(movie)%></p>
+        </div>
+        </div>
   <% end %>
-</table>
+  
+   <h3><%= link_to 'New Movie', new_movie_path %></h3>
