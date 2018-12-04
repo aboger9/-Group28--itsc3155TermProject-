@@ -1,10 +1,27 @@
-<div class="menu">
-            <%= image_tag("logo.png", class: "logo")%>
-            <a href="/login">Log in</a>
-            <a href=/movies>Movies</a>
-            <a href=/users>Users</a>
-            <a href="/welcome/index">Home</a>
-        </div>
+<html>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "RATE MY SPOOK!", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Movies", '/movies' %></li>
+        <li><%= link_to "Users", '/users' %></li>
+        <% if logged_in? %>
+              <li><%= link_to "Profile", current_user %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
 
 <% provide(:title, "Log in") %>
 <h1>Log in</h1>
@@ -13,11 +30,14 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :username %>
-      <%= f.email_field :username, class: 'form-control' %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
+      
+      <% print "SESSION USER ID:" %>
+      <% puts session[:user_id] %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>

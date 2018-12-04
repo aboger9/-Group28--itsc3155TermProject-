@@ -5,9 +5,11 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by(params[:session][:email])
-    if @user #&& @user.authenticate(params[:session][:password])
-      session[:user_id] = @user.id
+    @user = User.find_by_email(params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
+      log_in @user
+      print "SESSION ID: "
+      puts session[:user_id]
       redirect_to '/users'
     else
       flash.now[:danger] = 'Invalid email or password'
@@ -24,6 +26,28 @@ class SessionsController < ApplicationController
     if session[:user_id]
      User.find_by(id: session[:user_id])
     end
+  end
+  
+    # Logs in the given user.
+  def log_in(user)
+    session[:user_id] = user.id
+  end
+
+  # Returns the current logged-in user (if any).
+  def current_user
+      if session[:user_id]
+        @current_user ||= User.find_by(id: session[:user_id])
+      end
+  end
+
+  # Returns true if the user is logged in, false otherwise.
+  def logged_in?
+    !current_user.nil?
+  end
+  
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
   end
 end
 

@@ -7,7 +7,9 @@ class ReviewsController < ApplicationController
     def create
         @movie = Movie.find(params[:movie_id])
         @review = Review.new(review_params)
-        @review.user_id = session[:current_user_id]
+        if session[:user_id]
+            @review.user_id = session[:user_id]
+        end
         @review.movie_id = @movie.id
         
         @review.save

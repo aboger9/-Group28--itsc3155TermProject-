@@ -1,85 +1,146 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.styles_image {
-    max-height: 500px; 
-    max-width: 500px;
-    padding-bottom: 30px;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
 }
 
-.styles_banner {
-    max-height: 770px; 
-    max-width: 2800px;
-    padding-bottom: 30px;
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
 }
 
-.menu {
-    width: 100%;
-    height: 63px;
-    background-color: red;
-    font-weight: bold;
+input {
+  height: auto !important;
 }
 
-.menu a {
-    float: right;
-    display: block;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: 22px 20px;
-}
+/* typography */
 
-.menu a:hover {
-    background-color: grey;
-    color: white;
-}
-
-.logo {
-    float: left; 
-    border: 1px; 
-    max-height: 62px; 
-    max-width: 767px;
-}
-
-
-.row {
-  display: flex;
-  justify-content: center
-}
-
-.column {
-  vertical-align: middle;
-  padding: 5px;
-  max-height: 100%;
-  max-width: 100%;
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
 }
 
 h1 {
-    font-size: 48px;
-    color: black;
-    text-align: center;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 h2 {
-    margin: 25px;
-}
-
-html {
-    background: #111111;
-}
-
-body {
-    background: white;
-    font-size: 16px;
-    font-family: "Lato", sans-serif;
-    padding-bottom: 5px;
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
 }
 
 p {
-    margin: 25px;
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
 
-th, td {
-    padding: 15px;
-    text-align: left;
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
