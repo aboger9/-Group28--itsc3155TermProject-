@@ -6,7 +6,7 @@
   </h1>
   
     <h1>
-    <%= image_tag("https://images-na.ssl-images-amazon.com/images/I/71eWXnUxG3L._SL1500_.jpg", class: "styles_image") %>
+    <%= movie_poster(@movie.id) %>
   </h1>
  
  <h4>
@@ -41,25 +41,36 @@
   <h2>Reviews:</h2>
   
   <% @movie.reviews.each do |review| %>
-<p>
-  <strong>Author:</strong>
-  <%= User.find_by_id(review.user_id).username%>
-</p>
+
+<div class="a_row">
+     <div class="a_column">
+        <p>
+          <% user = User.find(review.user_id) %>
+          <%= user_avatar(user.id) %> 
+        </p>
+      </div>
+      <div class="a_column">
+      <p>
+        <strong>Author:</strong>
+        <%= User.find_by_id(review.user_id).username%>
+      </p>
  
- <p>
-    <strong>Rating:</strong>
-    <%= review.rating %> /10.0
-  </p>
+       <p>
+          <strong>Rating:</strong>
+          <%= review.rating %> /10.0
+        </p>
  
-  <p>
-    <strong>Review date:</strong>
-    <%= review.date %>
-  </p>
+        <p>
+          <strong>Review date:</strong>
+          <%= review.date %>
+        </p>
  
-  <p>
-    <strong>Review:</strong>
-    <%= review.body %>
-  </p>
+        <p>
+          <strong>Review:</strong>
+          <%= review.body %>
+        </p>
+      </div>
+</div>
 
   <br>
   <br>
@@ -68,7 +79,7 @@
 
 <h2>Add a review:</h2>
 <%= form_for([@movie, @movie.reviews.build]) do |f| %>
-
+  
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :body %>

@@ -1,23 +1,33 @@
 <%= render 'menu' %>
 
-<h4> <strong>Email: </strong> 
-<%= @user.email %> 
-</h4>
+<div class="a_row">
+     <div class="a_column">
+        <h4> 
+          <%= user_avatar(@user.id) %> 
+        </h4>
+      </div>
+      <div class="a_column">
+        
+      <h4> <strong>Email: </strong> 
+      <%= @user.email %> 
+      </h4>
 
-<h4> <strong>Username: </strong>
-<%= @user.username %>
-</h4>
+      <h4> <strong>Username: </strong>
+      <%= @user.username %>
+      </h4>
 
-<h4> <strong>Encrypted password: </strong>
-<%= @user.password_digest %>
-</h4>
+      <h4> <strong>Encrypted password: </strong>
+      <%= @user.password_digest %>
+      </h4>
 
-<h4><%= link_to 'Edit', edit_user_path(@user) %> 
-<%= link_to 'Destroy',
+      <h4><%= link_to 'Edit', edit_user_path(@user) %> 
+      <%= link_to 'Destroy',
             user_path(@user),
             method: :delete,
             data: { confirm: 'Are you sure?' } %>
-</h4>
+      </h4>
+    </div>
+</div>
 
 <h2>Reviews posted</h2>
  

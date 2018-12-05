@@ -1,13 +1,13 @@
 <%= render 'menu' %>
         
-<h1>Listing movies</h1>
- 
+<h1>Movies</h1>
+
   <% @movies.each do |movie| %>
    
    <div class="row">
      <div class="column">
             <h1><%= movie.title %></h1>
-            <%= image_tag("https://images-na.ssl-images-amazon.com/images/I/71eWXnUxG3L._SL1500_.jpg", class: "styles_image")%>
+            <%= movie_poster(movie.id) %>
         </div>
         <div class="column">
             <h3><%= movie.synopsis%></h3>
@@ -16,4 +16,5 @@
         </div>
   <% end %>
   
-   <h3><%= link_to 'New Movie', new_movie_path %></h3>
+    <h3><%= link_to 'Add a movie', new_movie_path %></h3>
+   

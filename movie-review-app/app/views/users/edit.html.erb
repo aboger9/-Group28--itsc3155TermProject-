@@ -18,10 +18,13 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+      
+      <%= f.label "Avatar (optional)" %>
+      <%= f.file_field :avatar, class: 'upload_image' %>
 
       <%= f.submit "Update my account", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
  
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', user_path %>

@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     def destroy
         @user = User.find(params[:id])
         @user.destroy
-        redirect_to users_path
+        redirect_to movies_path
     end
     
     def show
@@ -43,6 +43,6 @@ class UsersController < ApplicationController
     
     private
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
     end
 end

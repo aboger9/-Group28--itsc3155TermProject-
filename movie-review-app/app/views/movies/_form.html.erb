@@ -1,23 +1,25 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@movie) do |f| %>
+    <%= render 'movie_error_messages' %>
+    
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: 'form-control' %>
 
       <%= f.label :synopsis %>
-      <%= f.text_field :synopsis %>
+      <%= f.text_field :synopsis, class: 'form-control' %>
 
       <%= f.label :director %>
-      <%= f.text_field :director %>
+      <%= f.text_field :director, class: 'form-control' %>
 
       <%= f.label "MA rating" %>
-      <%= f.text_field :maRating %>
+      <%= f.text_field :maRating, class: 'form-control' %>
       
       <%= f.label "Release date" %>
-      <%= f.text_field :releaseDate %>
+      <%= f.text_field :releaseDate, class: 'form-control' %>
       
-      <%= f.label "Movie poster" %>
-      <%= f.text_field :image %>
+      <%= f.label "Movie poster (Optional)" %>
+      <%= f.file_field :poster, class: 'upload_image' %>
 
       <%= f.submit "Add movie", class: "btn btn-primary" %>
     <% end %>
