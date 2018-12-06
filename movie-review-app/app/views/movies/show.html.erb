@@ -29,13 +29,15 @@
     <%= @movie.maRating %>
   </h4>
   
+  <% if admin? %>
   <h4>
     <%= link_to 'Edit', edit_movie_path(@movie) %></td>
-    <%= link_to 'Destroy',
+    <%= link_to 'Delete',
                   movie_path(@movie),
                   method: :delete,
                   data: { confirm: 'Are you sure?' } %>
   </h4>
+  <% end %>
   
   <br>
   <h2>Reviews:</h2>
@@ -69,12 +71,21 @@
           <strong>Review:</strong>
           <%= review.body %>
         </p>
+        
+        <% if admin? %>
+      <p>
+        <% user = User.find(review.user_id) %>
+        <%= link_to 'Delete', [review.user, review],
+          method: :delete, 
+          data: {confirm: 'Are you sure?'} %>
+      </p>
+      <% end %>
       </div>
 </div>
 
   <br>
   <br>
-  
+
 <% end %>
 
 <h2>Add a review:</h2>
@@ -82,20 +93,22 @@
   
   <p>
     <%= f.label :text %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, placeholder: "Min: 5 characters" %>
   </p>
   
   <p>
     <%= f.label :rating %><br>
-    <%= f.text_area :rating %>
+    <%= f.text_area :rating, placeholder: "Range: 0-10" %>
   </p>
   
   <p>
     <%= f.label :date %><br>
-    <%= f.text_area :date %>
+    <%= f.text_area :date, placeholder: "XX/XX/XXXX" %>
   </p>
 
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= render 'footer' %>

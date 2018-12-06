@@ -43,6 +43,13 @@ h2 {
   color: #777;
 }
 
+h3 {
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -146,11 +153,22 @@ aside {
   padding: 5px;
 }
 
+.cuttoff_column {
+  text-align: center;
+  flex: 33.33%;
+  padding: 5px;
+  height:110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #bbb;
+}
+
 .styles_image {
     border: 1px solid black;
     border-radius: 2px;
     padding: 5px;
-    width: 350px;
+    height: 325px;
+    width: 225px;
 }
 
 .styles_avatar {

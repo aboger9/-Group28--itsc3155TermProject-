@@ -13,10 +13,10 @@
       <%= f.text_field :director, class: 'form-control' %>
 
       <%= f.label "MA rating" %>
-      <%= f.text_field :maRating, class: 'form-control' %>
+      <%= f.text_field :maRating, placeholder: "G, PG, PG-13, R, NC-17", class: 'form-control' %>
       
       <%= f.label "Release date" %>
-      <%= f.text_field :releaseDate, class: 'form-control' %>
+      <%= f.text_field :releaseDate, placeholder: "XX/XX/XXXX" ,class: 'form-control' %>
       
       <%= f.label "Movie poster (Optional)" %>
       <%= f.file_field :poster, class: 'upload_image' %>

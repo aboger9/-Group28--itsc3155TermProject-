@@ -32,10 +32,12 @@
 <h2>Reviews posted</h2>
  
 <% @user.reviews.each do |review| %>
-  <h3>
+
+  <hr>
+  <h4>
     Review for:
     <%= review.title%>
-  </h3>
+  </h4>
  
  <p>
     <strong>Rating:</strong>
@@ -51,5 +53,15 @@
     <strong>Review:</strong>
     <%= review.body %>
   </p>
+  
+  <p><strong>
+    <%= link_to 'Delete', [review.user, review],
+          method: :delete, 
+          data: {confirm: 'Are you sure?'} %>
+  </p></strong>
+  
+  &emsp;
 
 <% end %>
+
+<%= render 'footer' %>

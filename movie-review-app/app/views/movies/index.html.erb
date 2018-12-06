@@ -2,19 +2,92 @@
         
 <h1>Movies</h1>
 
+&emsp;
+
+<h3>Highest Rated Movies</h3>
+<div style="text-align: center; max-height: 350px; max-width: 1000px; overflow: auto;">
+<table align= "center">
+    <tr>
+    <td colspan="4"></td>
   <% @movies.each do |movie| %>
-   
-   <div class="row">
-     <div class="column">
-            <h1><%= movie.title %></h1>
-            <%= movie_poster(movie.id) %>
+      <% x = 0 %>
+      <% movie.reviews.each do |review| %>
+          <% x += review.rating %>
+      <% end %>
+      <% if x >= 9 %>
+          <td><%= link_to movie_poster(movie.id), movie_path(movie) %></td>
+    <% end %>
+  <% end %>
+  </tr>
+  </table>
+  </div>
+  
+  <hr>
+  &emsp;
+  
+ <h3>Rate My Spook! Favorites</h3>
+      <div style="text-align: center; max-height: 350px; max-width: 1000px; overflow: auto;">
+        <table align= "center">
+      <tr>
+      <td colspan="4"></td>
+          <td><a href= /movies/12><%= movie_poster(12) %></a></td>
+          <td><a href= /movies/6><%= movie_poster(6) %></a></td>
+          <td><a href= /movies/2><%= movie_poster(2) %></a></td>
+          <td><a href= /movies/7><%= movie_poster(7) %></a></td>
+          <td><a href= /movies/1><%= movie_poster(1) %></a></td>
+    </tr>
+    </table>
+  </div>
+  
+  <hr>
+  &emsp;
+  
+  <h3>All Movies</h3>
+<div>
+<table align= "center">
+    
+  <% @movies.each do |movie| %>
+  <% if movie.id % 4 == 1 %>
+  <tr>
+    <% end %>
+      <% x = 0 %>
+      <% movie.reviews.each do |review| %>
+          <% x += review.rating %>
+      <% end %>
+          <td><%= link_to movie_poster(movie.id), movie_path(movie) %></td>
+  <% end %>
+  </tr>
+  </table>
+  </div>
+  
+  &emsp;
+  
+    <div style= "text-align: center;">
+    <%= link_to 'Add a movie', new_movie_path, class: "btn btn-primary" %>
+   </div>
+  
+  &emsp;
+  
+  <h3>Movie Listings</h3>
+  <% @movies.each do |movie| %>
+     <div class="row">
+         <div class="column">
+            <h3><%= movie.title %></h3>
+            <%= link_to movie_poster(movie.id), movie_path(movie) %>
         </div>
+    
         <div class="column">
-            <h3><%= movie.synopsis%></h3>
+            <br><br><br><br>
+            <%= movie.synopsis %>
             <p><%= link_to "read more", movie_path(movie)%></p>
         </div>
-        </div>
+    </div>
   <% end %>
   
-    <h3><%= link_to 'Add a movie', new_movie_path %></h3>
-   
+  &emsp;
+  
+    <div style= "text-align: right;">
+    <%= link_to 'Add a movie', new_movie_path, class: "btn btn-primary" %>
+   </div>
+   &emsp;
+<%= render 'footer' %>
