@@ -1,11 +1,76 @@
 <%= render 'menu' %>
 
 <h1>How to create an account</h1>
-      <div style="text-align: center; max-height: 350px; max-width: 1000px; overflow: auto;">
+      <div style="text-align: center; max-width: 1000px; overflow: auto;">
         <table align= "center">
       <tr>
-      <td colspan="4"></td>
-          <td><a href= login><%= 'help_view_images/Help_Image1' %></a></td>
+      <td><h3>From any page click on the "log in" tab</h3></td>
+          <td><a href= login><%= image_tag"help_view_images/Help_Image1", :class => "styles_help_image" %></a></td>
+    </tr>
+    <tr>
+        <td><a href= login><%= image_tag"help_view_images/Help_Image2", :class => "styles_help_image" %></a></td>
+      <td><h3>From here simply click on the "sign up now" link</h3></td>
+    </tr>
+    <tr>
+      <td><h3>Once here all you need to do is <br>
+              enter your credentials and you're all set</h3></td>
+          <td><a href= signup><%= image_tag"help_view_images/Help_Image3", :class => "styles_help_image" %></a></td>
     </tr>
     </table>
   </div>
+  
+  <hr>
+  &emsp;
+  
+  <h1>How to add a movie</h1>
+      <div style="text-align: center; max-width: 1000px; overflow: auto;">
+        <table align= "center">
+      <tr>
+      <td><h3>From the movies page scroll down <br>
+              until you see the "add a movie" button</h3></td>
+          <td><a href= movies><%= image_tag"help_view_images/Help_Image4", :class => "styles_help_image" %></a></td>
+    </tr>
+    <tr>
+        <td><a href= movies/new><%= image_tag"help_view_images/Help_Image5", :class => "styles_help_image" %></a></td>
+      <td><h3>The button will take you to the "new movie" page.<br>
+              Once here all you need enter is the proper information</h3></td>
+    </tr>
+    <tr>
+      <td><h3>If you want to add a movie poster <br>
+                 click the "choose file" button and add an image saved onto your computer<br>
+                  <strong>(Admin monitored)</strong></h3></td>
+          <td><a href= movies/new><%= image_tag"help_view_images/Help_Image6", :class => "styles_help_image" %></a></td>
+    </tr>
+    </table>
+  </div>
+    
+  <hr>
+  &emsp;
+  
+  <h1>How to add a review</h1>
+  <h4 style="text-align: center;">
+    You do not require an account to write a review. However if you would like to have access to your review, 
+    and have it tied to your profile you must have an account.
+    </h4>
+    <br>
+      <div style="text-align: center; max-width: 1000px; overflow: auto;">
+        <table align= "center">
+      <tr>
+      <td><h3>Select a movie you would like to review from the "movies" page</h3></td>
+          <td><a href= movies><%= image_tag"help_view_images/Help_Image7", :class => "styles_help_image" %></a></td>
+    </tr>
+    <tr>
+        <td><a href= movies><%= image_tag"help_view_images/Help_Image8", :class => "styles_help_image" %></a></td>
+      <td><h3>Scroll down to the bottom of the page and<br>
+              you will see the "add a review section"</h3></td>
+    </tr>
+    <tr>
+      <td><h3>Once you have written your review you will see it pop up under the last review.<br>
+                  If you do not see your review it means you did not follow the validation criteria<br>
+                  <strong>(Admin monitored)</strong></h3></td>
+          <td><a href= movies><%= image_tag"help_view_images/Help_Image9", :class => "styles_help_image" %></a></td>
+    </tr>
+    </table>
+  </div>
+  
+  <%= render 'footer' %>

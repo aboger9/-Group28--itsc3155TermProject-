@@ -4,7 +4,9 @@
 
 &emsp;
 
+<div style="background-color: #d8d7d7; padding-left: 10px">
 <h3>Highest Rated Movies</h3>
+</div>
 <div style="text-align: center; max-height: 350px; max-width: 1000px; overflow: auto;">
 <table align= "center">
     <tr>
@@ -25,11 +27,20 @@
   <hr>
   &emsp;
   
- <h3>Rate My Spook! Favorites</h3>
-      <div style="text-align: center; max-height: 350px; max-width: 1000px; overflow: auto;">
+<div style="background-color: #d8d7d7; padding-left: 10px">
+<h3>Rate My Spook! Favorites</h3>
+</div>
+ <div class="a_row">
+   <div class="a_column">
+      <%= image_tag"Check_Mark" %>
+      <h3>From us to you, here are the movies we most enjoyed!</h3>
+        </div>
+        <div class="column">
+          <div style="text-align: left; max-height: 350px; max-width: 758px; overflow: auto;">
         <table align= "center">
       <tr>
       <td colspan="4"></td>
+          <td><a href= /movies/26><%= movie_poster(26) %></a></td>
           <td><a href= /movies/12><%= movie_poster(12) %></a></td>
           <td><a href= /movies/6><%= movie_poster(6) %></a></td>
           <td><a href= /movies/2><%= movie_poster(2) %></a></td>
@@ -37,12 +48,16 @@
           <td><a href= /movies/1><%= movie_poster(1) %></a></td>
     </tr>
     </table>
+    </div>
+  </div>
   </div>
   
   <hr>
   &emsp;
   
-  <h3>All Movies</h3>
+<div style="background-color: #d8d7d7; padding-left: 10px">
+<h3>All Movies</h3>
+</div>
 <div>
 <table align= "center">
     
@@ -68,7 +83,9 @@
   
   &emsp;
   
-  <h3>Movie Listings</h3>
+<div style="background-color: #d8d7d7; padding-left: 10px">
+<h3>Movie Listings</h3>
+</div>
   <% @movies.each do |movie| %>
      <div class="row">
          <div class="column">
@@ -78,8 +95,11 @@
     
         <div class="column">
             <br><br><br><br>
-            <%= movie.synopsis %>
-            <p><%= link_to "read more", movie_path(movie)%></p>
+            <h4><%= movie.synopsis %></h4>
+            <h4><strong>Directed by: </strong><%= movie.director %></h4>
+            <h4><strong>Released: </strong><%= movie.releaseDate %></h4>
+            <h4><strong>Rated: </strong><%= movie.maRating %></h4>
+            <h4><%= link_to "read more", movie_path(movie)%></h4>
         </div>
     </div>
   <% end %>

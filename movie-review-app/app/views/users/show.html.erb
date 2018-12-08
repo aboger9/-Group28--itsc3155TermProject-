@@ -31,8 +31,12 @@
 
 <h2>Reviews posted</h2>
  
+ <% x = 0 %>
 <% @user.reviews.each do |review| %>
+<% x+= 1 %>
 
+<% if x % 2 == 0 %>
+<div style="background-color: #d8d7d7; padding-left: 10px">
   <hr>
   <h4>
     Review for:
@@ -61,6 +65,41 @@
   </p></strong>
   
   &emsp;
+</div>
+
+<% else %>
+<div>
+  
+  <hr>
+  <h4>
+    Review for:
+    <%= review.title%>
+  </h4>
+ 
+ <p>
+    <strong>Rating:</strong>
+    <%= review.rating %>/10
+  </p>
+ 
+  <p>
+    <strong>Review Date:</strong>
+    <%= review.date %>
+  </p>
+ 
+  <p>
+    <strong>Review:</strong>
+    <%= review.body %>
+  </p>
+  
+  <p><strong>
+    <%= link_to 'Delete', [review.user, review],
+          method: :delete, 
+          data: {confirm: 'Are you sure?'} %>
+  </p></strong>
+  
+  &emsp;
+</div>
+<% end %>
 
 <% end %>
 
