@@ -15,6 +15,7 @@ class ReviewsController < ApplicationController
         
         @review.save
         redirect_to movie_path(@movie)
+
     end
     
     def destroy

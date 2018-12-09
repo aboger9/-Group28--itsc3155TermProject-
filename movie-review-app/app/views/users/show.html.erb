@@ -29,6 +29,8 @@
     </div>
 </div>
 
+<% if @user.reviews.any? == true %>
+
 <h2>Reviews posted</h2>
  
  <% x = 0 %>
@@ -101,6 +103,7 @@
 </div>
 <% end %>
 
+<% end %>
 <% end %>
 
 <%= render 'footer' %>
